@@ -10,7 +10,7 @@ Available in **GLSL (Vulkan)** and **Slang**.
 ![ARMSX2 screenshot](screenshots/armsx2-toy-story-3.jpg)
 > Toy Story 3 running on ARMSX2.
 
-## What's different from the original
+## What's different
 
 - Side bars use a dark grey background with a dotted mesh, inspired by the NSO classic game display
 - Slang conversion of the shader, in addition to the original GLSL version
