@@ -1,24 +1,40 @@
+# LinkinCRT-NSO
 
-![zel22](https://github.com/user-attachments/assets/ae15889a-a25e-424c-b4eb-41f97778c40b)
+A fork of [Linkinworm/dolphin-post-process-s](https://github.com/Linkinworm/dolphin-post-process-s) (LinkinCRT) that adds a **Nintendo Switch Online-style background** to the side bars, keeping the CRT curvature and all the post-processing from the original shader.
 
-LinkinCRT_Vulkan.glsl only version available now (removed others since they ain't needed // were for testing)
-^ This is optimised for vulkan. but seems to work with OGL <(this is not fully tested though since I feel vulkan is just better)>
-DX11 and DX12 seem to just be fully broken, glitchy effects in this case possibly use an older version. Again i'm not working for DirectX or OGL compatibility as I want to try maintain some performance due to how many effects you can layer (all 70 if you really wanted to).
+Available in **GLSL (Vulkan)** and **Slang**.
 
-_____________________________________________
-important update for this file, you will want to set the aspect ratio to force 16:9. Then in the shader click force 4:3 option, this will fix the screen being squashed. if you use auto or force 4:3 you will lose the bezel speakers but it should keep the aspect ratio to 4:3.
+![Mario Kart: Double Dash!! on Dolphin](screenshots/dolphin-mario-kart.jpg)
+> Mario Kart: Double dash!! running on Dolphin.
 
-_____________________________________________
+![ARMSX2 screenshot](screenshots/armsx2-toy-story-3.jpg)
+> Toy Story 3 running on ARMSX2.
 
-CRT shader post process for dolphin emulator.
+## What's different from the original
 
-Currently it will load some random values. Most should be personal preference but as this has expanded i've not taken care of default values and just wanted values to quickly test so you'll likly want to change everything to 0 / turn off options with the top check boxes and work your way thought it to fine tune everything.
-if you use higher IR, make sure to change option 13, Base mask size
+- Side bars use a dark grey background with a dotted mesh, inspired by the NSO classic game display
+- Slang conversion of the shader, in addition to the original GLSL version
 
-Everything should be self explanitory. options are ordered in how they stack on each other and as such some options will only work when enabling other options
-this is mainly limited to option 16,19 and 20 though.(in that order)
+Everything else (CRT curvature, scanlines, masks, bloom, and the rest of the options) comes from LinkinCRT and works the same way.
 
-Also works on the android version, should my commit changes get merged into the master branch at some point! :D
+## Files
 
-______________________________________________
-removed the custom bezel image shader, its clunky and was just an experiment AKA useless other than a neat experiment.
+- `LinkinCRT_NSO_Vulkan.glsl`: GLSL version for Dolphin (Vulkan)
+- `LinkinCRT_NSO.slang`: Slang version for emulators that support slang shaders
+
+## How install on dolphin
+
+1. Copy the `.glsl` file into the `Shaders` folder inside your Dolphin user directory.
+2. In Dolphin, go to **Graphics → Enhancements → Post-Processing Effect** and select the shader.
+3. Use the **Vulkan** backend.
+
+4. Set Dolphin's aspect ratio to **Force 16:9**.
+
+## Credits
+
+- Original shader: [Linkinworm](https://github.com/Linkinworm/dolphin-post-process-s). All the CRT work is theirs.
+- NSO-style background, Slang conversion and tweaks: [Kauã Conceição](https://github.com/kauaconceicao)
+
+The original repository does not include a license. This fork is shared as a derivative of that work, and I'm happy to follow the author's wishes on licensing.
+
+This project is not affiliated with or endorsed by Nintendo. Game screenshots are for demonstration only.
