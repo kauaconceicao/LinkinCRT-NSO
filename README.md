@@ -33,7 +33,7 @@ Everything else (CRT curvature, scanlines, masks, bloom, and the rest of the opt
 ## Credits
 
 - Original shader: [Linkinworm](https://github.com/Linkinworm/dolphin-post-process-s). All the CRT work is theirs.
-- NSO-style background, Slang conversion and tweaks: [Kauã Conceição](https://github.com/kauaconceicao)
+- NSO-style background, Slang conversion and tweaks: [me](https://github.com/kauaconceicao)
 
 The original repository does not include a license. This fork is shared as a derivative of that work, and I'm happy to follow the author's wishes on licensing.
 
